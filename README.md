@@ -4,7 +4,6 @@
 - 💞️ I’m looking to collaborate on python projects.
 - 📫 How to reach me:
 -           gmail: thapareshav50@gmail.com
--           insta: reshav.py
 
 <!---
 reshav1234/reshav1234 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
