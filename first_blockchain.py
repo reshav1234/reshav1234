@@ -2,6 +2,7 @@
 import hashlib
 import json 
 from time import time     
+from uuid import uuid4
 
 
 class blockchain(object):
@@ -28,7 +29,7 @@ class blockchain(object):
         self.chain.append(block)
         return block 
 
-    def new_transaction(self):
+    def new_transaction(self, sender, recipient, amount):
         # adds a transaction to the list of trasnaction
         self.current_transaction.append({
             'sender': sender,
@@ -36,8 +37,7 @@ class blockchain(object):
             'amount': amount,
         })
         return self.last_block['index'] + 1
-    
-
+   
     @staticmethod
     def hash(block):
         
@@ -53,3 +53,20 @@ class blockchain(object):
         return self.chain[-1]
 
 
+    # Proof of work
+    def proof_of_work(self, last_proof):
+        """
+        simple proof of work algorithm 
+        - Find the number p' such that hash(pp') contains leading 4 zeros, where p is previous p'
+        - p' is previous proof and p is new proof 
+        """
+        proof = 0
+        while self.valid_proof(last_proof, proof) is False:
+            proof += 1
+        return proof 
+
+    @staticmethod
+    def valid_proof(last_proof, proof):
+        guess = f'{last_proof}{proof}'.encode()
+        guess_hash = hashlib.sha256(guess).hexdigest()
+        return guess_hash[:4] == "0000"
