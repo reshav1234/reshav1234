@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @reshav1234
 - 👀 I’m interested in software development.
-- 🌱 I’m currently learning on how to build cryptocurrency using python.
+- 🌱 I’m currently stuckkk.
 - 💞️ I’m looking to collaborate on python projects.
 - 📫 How to reach me:
 -           gmail: thapareshav50@gmail.com
