@@ -30,5 +30,5 @@ def computer_guess(x):
     print("Congratulation computer guessed your number ", guess)
 
 
-#guessing(15)
+guessing(15)
 computer_guess(7)
