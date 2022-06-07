@@ -24,6 +24,7 @@ def guessing(x):
     feedback = ''
     while feedback != 'c' and low != high:
         guess = random.randint(low, high)
+        feedback = input(f"IS {guess} too high or low: ")
         if feedback =='h':
             high = guess - 1
         elif feedback == 'l':
