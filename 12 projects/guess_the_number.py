@@ -1,34 +1,33 @@
-# Guessing the random number
+# User guesses the number
 
+import random       
+def guess(x):
+    random_num = random.randint(1, x)
+    guess = 0
+    while guess != random_num:
+        guess = int(input(f"Guess the number from 1 to {x}: "))
+        if guess > x:
+            print("Guess is too high, try again.")
+        elif guess < x:
+            print("Guess is too low, try again.")
+
+    print("You have guessed the right number.")
+
+guess(10)
+
+
+# Computer guesses the number
 import random
-
-# We define a function 
 def guessing(x):
-    random_number = random.randint(1, x)
-    guess = 0 # Initialization
-    while guess != random_number:
-        guess = int(input(f"Guess a number between 1 and {x}: "))
-        print(guess)
-        if guess > random_number:
-            print("Sorry, try again. Too high.")
-        elif guess < random_number:
-            print("Sorry, try again. Too low.")
-    
-    print("Congratulation you have guessed the right answer ", random_number)
-
-def computer_guess(x):
-    low = 1 
+    low = 1
     high = x
     feedback = ''
     while feedback != 'c' and low != high:
         guess = random.randint(low, high)
-        feedback = input(f"Is {guess} too high, too low, or correct?")
-        if feedback == 'h':
-            high = guess - 1 
+        if feedback =='h':
+            high = guess - 1
         elif feedback == 'l':
-            low = guess + 1 
-    print("Congratulation computer guessed your number ", guess)
+            low = guess + 1
+    print("You have guessed the corrent number.", guess)
 
-
-guessing(15)
-computer_guess(7)
+guessing(5)
