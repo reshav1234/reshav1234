@@ -13,7 +13,7 @@ def guess(x):
 
     print("You have guessed the right number.")
 
-guess(10)
+
 
 
 # Computer guesses the number
@@ -31,3 +31,4 @@ def guessing(x):
     print("You have guessed the corrent number.", guess)
 
 guessing(5)
+guess(10)
